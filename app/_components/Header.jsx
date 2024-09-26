@@ -25,8 +25,8 @@ function Header() {
     <div className='p-5 shadow-sm flex  justify-between
     '>
         <div className='flex items-center gap-8 '>
-            <Image src='/logo.svg' alt='logo'
-            width={180} height={100} />
+            <Image src='/home_helper_logo.png' alt='logo'
+            width={220} height={100} />
             <div className='md:flex items-center
             gap-6 hidden
             '>
