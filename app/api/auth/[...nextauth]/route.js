@@ -21,7 +21,8 @@ export const authOptions = {
                 image: profile.picture,
             }
         },
-    }]
+    }],
+    secret: process.env.NEXTAUTH_SECRET
 }  
 
 
