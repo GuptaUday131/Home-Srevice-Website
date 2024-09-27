@@ -23,7 +23,7 @@ function BusinessList({businessList,title}) {
                     object-cover rounded-lg'
                     />
                     <div className='flex flex-col 
-                    items-baseline p-3 gap-1'>
+                    items-baseline p-3 gap-1'key={business.id || index}>
                         <h2 className='p-1 bg-purple-200
                         text-primary rounded-full px-2
                          text-[12px]'>{business.category.name}</h2>

@@ -1,6 +1,7 @@
 const { gql, default: request } = require("graphql-request")
 
-const MASTER_URL = 'https://ap-south-1.cdn.hygraph.com/content/'+process.env.NEXT_PUBLIC_MASTER_URL_KEY+'/master'
+// const MASTER_URL = 'https://ap-south-1.cdn.hygraph.com/content/'+process.env.NEXT_PUBLIC_MASTER_URL_KEY+'/master'
+const MASTER_URL = 'https://api-ap-south-1.hygraph.com/v2/cm1g4gh6p024v07usrpizztxj/master'
 const getCategory = async () => {
   const query = gql`
     query Category {
@@ -97,7 +98,7 @@ const createNewBooking = async (businessId, date, time, userEmail, userName) => 
   const mutationQuery = gql`
   mutation CreateBooking {
     createBooking(
-      data: {bookingStatus: Booked, 
+      data: {bookingStatus: booked, 
         businessList: {connect: {id: "`+ businessId + `"}},
          date: "`+ date + `", time: "` + time + `", 
          userEmail: "`+ userEmail + `",

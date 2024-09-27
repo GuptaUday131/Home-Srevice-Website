@@ -79,6 +79,7 @@ function BookingSection({children,business}) {
                         // Toast Msg 
                     }
                 },(e)=>{
+                    console.log(e);
                     toast('Error while creating booking')
                     //Error Toast Msg
                 })
