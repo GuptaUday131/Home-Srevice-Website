@@ -154,20 +154,28 @@ const GetUserBookingHistory = async (userEmail) => {
 }
 
 
-const deleteBooking = async (bookingId) => {
+const DeleteBooking = async (bookingId) => {
   const mutationQuery = gql`
   mutation DeleteBooking {
-    updateBooking(
-      data: {userName: "RRRS"}
-      where: {id: "cltastwp36re707jzb02sgdlm"}
-    ) {
-      id
-    }
+  deleteBooking(where: {id: "`+ bookingId + `"}) {
+    id
   }
-  
-  
-  `
+}
+`
+  const result = await request(MASTER_URL, mutationQuery)
+  return result;
 
+}
+
+
+const GetIdToCancelBooking = async (a = booking.businesslist.name) => {
+  const mutationQuery = gql`
+  query GetIdToCancelBooking {
+  bookings(where: { businessList: { name: "`+ a + `" } }) {
+    id
+  }
+}
+`
   const result = await request(MASTER_URL, mutationQuery)
   return result;
 
@@ -181,5 +189,6 @@ export default {
   createNewBooking,
   BusinessBookedSlot,
   GetUserBookingHistory,
-  deleteBooking
+  DeleteBooking,
+  GetIdToCancelBooking
 }
